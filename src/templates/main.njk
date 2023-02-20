@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{% block tpl_title %}SSG Demo · {{ title }}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/_assets/css/main.css">
+        <script src="/_assets/js/main.js" defer></script>
+    </head>
+    <body>
+        <div class="page">
+            {% block tpl_header %}
+            <header>
+                <div class="wrapper">
+                    <p>SSG Demo</p>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/some-page/">Some Page</a></li>
+                        <li><a href="/another-page/">Another Page</a></li>
+                        <li><a href="/yet-another-page/">Yet Another Page</a></li>
+                    </ul>
+                </div>
+            </header>
+            {% endblock %}
+
+            {% block tpl_main %}
+            <main class="wrapper">
+                {{ content | safe }}
+            </main>
+            {% endblock %}
+        </div>
+    </body>
+</html>
