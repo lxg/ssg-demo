@@ -6,12 +6,10 @@ export STACK_NAME=${STACK_NAME:-ssg-demo}
 
 dir=$(pwd)
 
-cd $dir
 [ -d dist ] && rm -r dist
 [ -d node_modules ] || npm ci --omit=dev --no-audit
 npm run build
 
-cd $dir
 aws cloudformation deploy \
     --stack-name=$STACK_NAME \
     --template-file=cloudformation.yml \
